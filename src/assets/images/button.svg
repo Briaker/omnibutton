@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="65mm" width="74mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 262.20472 230.31496">
+ <defs>
+  <mask id="buttonOverlay" maskUnits="objectBoundingBox">
+   <path id="overlay" fill="#fff" d="m422.24 660.35a125 87.5 0 0 0 125 -87.5 125 87.5 0 0 0 -0.0488 -0.95117h0.0488v-119.85h-250v119.85h0.0684a125 87.5 0 0 0 -0.0684 0.95117 125 87.5 0 0 0 125 87.5z"/>
+  </mask>
+ </defs>
+ <g id="buttonWrapper" transform="translate(-.0000044141 -822.05)">
+  <g id="button" mask="url(#buttonOverlay)" transform="translate(-291.14 381)">
+   <rect id="buttonBottom" fill="#d40000" height="119.85" width="250" y="540.5" x="297.24"/>
+   <ellipse id="buttonTop" fill="#ff2a2a" rx="125" ry="87.5" cy="539.55" cx="422.24"/>
+   <path id="buttonHighlight" d="m542.84 537.2a137.5 87.5 0 0 1 -136.6 77.854 137.5 87.5 0 0 1 -38.709 -3.5957 125 87.5 0 0 0 50.709 7.5957 125 87.5 0 0 0 124.6 -81.854z" fill="#faa"/>
+  </g>
+ </g>
+</svg>

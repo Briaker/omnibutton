@@ -1,7 +1,7 @@
 {
-  "name": "react-boiler",
-  "version": "1.1.0",
-  "description": "React project boilerplate",
+  "name": "omnipresent-button",
+  "version": "1.0.0",
+  "description": "Omnipresent Button",
   "author": "Brian Baker",
   "license": "ISC",
   "devDependencies": {
@@ -9,8 +9,10 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "babelify": "^7.3.0",
+    "bad-words": "^1.5.0",
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
+    "firebase": "^3.7.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^3.0.4",
@@ -22,6 +24,7 @@
     "gulp-uglify": "^2.1.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-svg-inline": "^1.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }

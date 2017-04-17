@@ -1,1 +1,117 @@
 @import 'setup';
+
+$primaryColour: rgb(235,235,235);
+$buttonColour: hsl(0,80%,50%);
+$buttonColourDisabled: hsl(0,0%,50%);
+
+.wrapper {
+    background: $primaryColour;
+    margin: 4rem;
+    padding: 4rem;
+    border-radius: 2rem;
+    border: 1rem solid darken($primaryColour, 10);
+}
+
+.omniButtonWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.inputWrapperInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 400px;
+    height: 300px;
+    border-radius: 2px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.errorMessage {
+    color: red;
+    font-weight: bold;
+}
+
+.inputWrapperInner h2{
+    margin-bottom: 0rem;
+}
+
+.inputWrapperInner input, .inputWrapperInner button{
+    height: 2rem;
+    padding: 0 0.5rem;
+}
+
+.inputWrapperInner button{
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    background: $buttonColour;
+}
+
+.svgWrapper { 
+    border: none;
+    background: none;
+    width: 400px;
+    outline: none;
+}
+
+#button {
+    cursor: pointer;
+}
+
+.buttonDown {
+    animation: buttonDown 0.2s ease;
+}
+
+#buttonBottom, #buttonTop, #buttonHighlight {
+    position: relative;
+    transition: transform 0.2s ease-in-out, fill 0.1s ease-in-out;
+}
+
+#buttonBottom {
+    fill: darken($buttonColour, 10);
+}
+
+#buttonTop {
+    fill: $buttonColour;
+}
+
+#buttonHighlight {
+    fill: lighten($buttonColour, 20);
+}
+
+.svgWrapper:disabled #buttonBottom {
+    fill: darken($buttonColourDisabled, 10);
+}
+
+.svgWrapper:disabled #buttonTop {
+    fill: $buttonColourDisabled;
+}
+
+.svgWrapper:disabled #buttonHighlight {
+    fill: lighten($buttonColourDisabled, 20);
+}
+
+@keyframes buttonDown {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0px); }
+}

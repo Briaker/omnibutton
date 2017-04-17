@@ -18,7 +18,8 @@ const reload        = browserSync.reload;
 
 gulp.task('browser-sync', () => {
     browserSync.init({
-        server: './dist'
+        server: './dist',
+        ghostMode: false
     })
 });
 
@@ -61,7 +62,6 @@ gulp.task('es6-dev', () => {
     }))
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(uglify())
     .pipe(gulp.dest('./dist/assets/js'))
     .pipe(reload({stream: true}));
 });
