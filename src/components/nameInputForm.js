@@ -1,6 +1,7 @@
 import React from 'react';
 import Filter from 'bad-words';
 import config from '../config';
+import ReactCountdownClock from 'react-countdown-clock'
 
 export default class NameInputForm extends React.Component {
     constructor() {
@@ -13,10 +14,6 @@ export default class NameInputForm extends React.Component {
             errorMessage: null
         }
     }
-
-    // componentDidMount() {
-    //     this.refs.nameInput.focus();
-    // }
 
     handleSubmit(event) {
         event.preventDefault();
@@ -43,16 +40,16 @@ export default class NameInputForm extends React.Component {
         }
     }
 
+
     handleInput(event) { 
         event.preventDefault();
-        if(event.target.value.length) {
-            this.setState({
-                userName: event.target.value
-            });
-        }
+        this.setState({
+            userName: event.target.value
+        });
     }
 
     render() {
+
         const errorMessage = this.state.errorMessage ? (
             <p className="errorMessage">{this.state.errorMessage}</p>
         ) :
@@ -62,8 +59,16 @@ export default class NameInputForm extends React.Component {
         const content = this.props.display ? (
             <div className="inputWrapper">
                 <div className="inputWrapperInner">
+
                     <h2>Congratulations!</h2>
                     <p>Please enter your name!</p>
+
+                    <ReactCountdownClock seconds={20}
+                                         color="#f00"
+                                         alpha={0.9}
+                                         size={100}
+                                         onComplete={() => {console.log('ended')}} />
+
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" onChange={this.handleInput} autoFocus id="nameInput"/>
                         <button>Submit</button>

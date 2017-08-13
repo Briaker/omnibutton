@@ -115,3 +115,7 @@ $buttonColourDisabled: hsl(0,0%,50%);
     50% { transform: translateY(20px); }
     100% { transform: translateY(0px); }
 }
+
+.react-countdown-clock {
+    position: relative;
+}

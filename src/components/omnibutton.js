@@ -19,6 +19,7 @@ export default class OmniButton extends React.Component {
             name: null,
             isActive: false,
             showInput: false,
+            showButton: false,
             buttonKey: null,
             currentUser: null
         };
@@ -83,6 +84,8 @@ export default class OmniButton extends React.Component {
             else {
                 console.log('This Omnibutton already exists!')
             }
+
+            this.getDataFromDatabase();
         });
     }
 
@@ -103,17 +106,29 @@ export default class OmniButton extends React.Component {
         this.dbRef = db.ref(`/buttons/${config.id}`);
 
         this.dbRef.on('value', (data) => {
-            const value = data.val();
-            const key = Object.keys(data.val())[0]
-            const button = value[key];
+            if(data.exists()) {
+                this.setState({
+                    showButton: false
+                });
+                const value = data.val();
+                const key = Object.keys(data.val())[0]
+                const button = value[key];
 
-            this.setState({
-                globalClickCount: button.globalClickCount,
-                name: button.name,
-                isActive: button.isActive,
-                buttonKey: key,
-                currentUser: button.currentUser
-            });
+                this.setState({
+                    globalClickCount: button.globalClickCount,
+                    name: button.name,
+                    isActive: button.isActive,
+                    buttonKey: key,
+                    currentUser: button.currentUser
+                });
+            }
+            else {
+                console.log(`Please initialize ${config.id}`);
+                this.setState({
+                    showButton: true
+                });
+            }
+            
         });
     }
 
@@ -133,8 +148,13 @@ export default class OmniButton extends React.Component {
     }
 
     render() {
-        // <button onClick={this.handleCreate}>Create new button!</button>
         // <button onClick={() => {this.submitNameCallback(this.state.currentUser)}}>Reset Count!</button>
+        const initButton = this.state.showButton ? (
+            <button onClick={this.handleCreate}>Initialize {config.id}</button>
+        ) : (
+            <h1>Loading...</h1>
+        );
+
         const content = this.state.name ? (
             <div className="omniButtonWrapper">
                 <h2>Current Button Master:</h2>
@@ -165,7 +185,7 @@ export default class OmniButton extends React.Component {
         )
         : (
             <div className="loading">
-                <h1>Loading...</h1>
+                {initButton}
             </div>
         );
 

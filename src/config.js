@@ -1,7 +1,7 @@
 const config = { 
-    id: 'omni-1',
-    name: 'Omnibutton One',
-    clickGoal: 10000,
+    id: 'omni-2',
+    name: 'Omnibutton Test',
+    clickGoal: 10,
     maxNameLength: 60
 };
 
